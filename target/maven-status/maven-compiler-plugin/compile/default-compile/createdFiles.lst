@@ -1,9 +1,11 @@
 com\ruoran\DAO\DAO.class
 com\ruoran\pojo\Order.class
 com\ruoran\pojo\OrderItem.class
+com\me\controller\CartController.class
 com\me\controller\NavgationController.class
 com\ruoran\pojo\CartItem.class
 com\me\controller\UserController.class
 com\ruoran\pojo\User.class
 com\ruoran\pojo\Product.class
+com\ruoran\pojo\Cart.class
 com\ruoran\DAO\UserDAO.class

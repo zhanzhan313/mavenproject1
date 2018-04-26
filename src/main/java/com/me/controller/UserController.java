@@ -65,7 +65,7 @@ public class UserController {
     }
     
     
-     @RequestMapping("/confirmLogin.htm")
+    @RequestMapping("/confirmLogin.htm")
     public String confirmLogin(HttpServletRequest request, UserDAO userDao) {
         String useremail = request.getParameter("email");
         String password = request.getParameter("password");

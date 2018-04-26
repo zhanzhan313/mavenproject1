@@ -33,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="dreamcrub">
 			   	 <ul class="breadcrumbs">
                     <li class="home">
-                       <a href="${contextPath}/WEBToolFinal/index.htm" title="Go to Home Page">Home</a>&nbsp;
+                       <a href="${contextPath}/mavenproject1/index.htm" title="Go to Home Page">Home</a>&nbsp;
                        <span>&gt;</span>
                     </li>
                     <li class="women">
@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                 </ul>
                 <ul class="previous">
-                	<li><a href="${contextPath}/WEBToolFinal/index.htm">Back to Previous Page</a></li>
+                	<li><a href="${contextPath}/mavenproject1/index.htm">Back to Previous Page</a></li>
                 </ul>
                 <div class="clearfix"></div>
 			   </div>
