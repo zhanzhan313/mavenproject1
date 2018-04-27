@@ -20,7 +20,7 @@
 </style> 
 <div class="col-center-block">
     <h2 >Your Order is placed successfully! </h2>
- <a href="index.htm">Click Here to continue shopping </a>
+ <a href="index.htm">Click Here to continue shopping </a><br/>
  <a href="orderhistory.htm">Click Here to View Order History </a>
 </div>
 

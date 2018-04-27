@@ -33,7 +33,12 @@ public class CartController {
 
         Product product = new Product();
         product.setImage(request.getParameter("bookimg"));
-        product.setMarket_price(Double.valueOf((request.getParameter("bookprice"))));
+        try{ 
+            product.setMarket_price(Double.valueOf((request.getParameter("bookprice"))));
+        }catch(Exception e){
+            product.setMarket_price(0.0);
+        }
+       
         product.setPid((request.getParameter("bookid")));
           try {
               cart=(Cart)request.getSession().getAttribute("mycart");
@@ -80,7 +85,7 @@ public class CartController {
             orderItem.setCount(cartItem.getCount());
             orderItem.setSubtotal(cartItem.getSubtotal());
             orderItem.setProductname(cartItem.getProductname());
-            orderItem.setProductpic(cartItem.getProductid());
+            orderItem.setProductpic(cartItem.getProductpic());
             orderItem.setSinglepric(cartItem.getProductpric());
             orderItem.setOrder(order);
             order.getOrderItems().add(orderItem);

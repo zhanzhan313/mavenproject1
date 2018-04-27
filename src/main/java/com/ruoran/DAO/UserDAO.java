@@ -5,11 +5,15 @@
  */
 package com.ruoran.DAO;
 
+import static com.ruoran.DAO.DAO.getSession;
 import com.ruoran.pojo.Order;
 import com.ruoran.pojo.OrderItem;
 import com.ruoran.pojo.User;
+import java.util.List;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -111,4 +115,16 @@ public class UserDAO extends DAO{
 			return null;
 		
 	}
+	public List<User> getallUsers() {
+        Criteria cr = getSession().createCriteria(User.class);
+        List results = cr.list();
+       
+        if (results != null && results.size() > 0) {
+            List<User> users= results;
+           
+            return users;
+           
+        }
+        return null;
+    }
 }

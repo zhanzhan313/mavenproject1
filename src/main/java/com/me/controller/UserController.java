@@ -5,12 +5,14 @@
  */
 package com.me.controller;
 
+import com.ruoran.DAO.OrderDao;
 import com.ruoran.DAO.UserDAO;
 import com.ruoran.pojo.Order;
 import com.ruoran.pojo.OrderItem;
 import com.ruoran.pojo.User;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -25,17 +27,45 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class UserController {
-    
+
     @RequestMapping("/orderhistory.htm")
-    public String orderhistory(HttpServletRequest request) {
-        User user=(User)request.getSession().getAttribute("existUser");
+    public String orderhistory(HttpServletRequest request, OrderDao orderDao) {
+        User user = (User) request.getSession().getAttribute("existUser");
+        List<Order> orders = orderDao.findOrdersByUid(user.getUid());
+        request.getSession().setAttribute("existUserOrder", orders);
+        return "orderhistory";
+
     }
-    
-    
+    @RequestMapping("/userorderhistory.htm")
+    public String userorderhistory(HttpServletRequest request, OrderDao orderDao) {
+        int uid=Integer.valueOf(request.getParameter("userid"));
+        List<Order> orders = orderDao.findOrdersByUid(uid);
+        request.getSession().setAttribute("existUserOrder", orders);
+        return "orderhistory";
+
+    }
+
+    @RequestMapping("/ViewSingleorder.htm")
+    public String ViewSingleorder(HttpServletRequest request, OrderDao orderDao) {
+        int id = (Integer.valueOf(request.getParameter("Ordernumber")));
+        List<OrderItem> orderItems = orderDao.findOrderItemsByUid(id);
+        request.getSession().setAttribute("existUserorderItems", orderItems);
+        return "orderitemshistory";
+
+    }
+
     @RequestMapping("/confirmLogin.htm")
     public String confirmLogin(HttpServletRequest request, UserDAO userDao) {
         String useremail = request.getParameter("email");
         String password = request.getParameter("password");
+        if (useremail.equals("admin") && password.equals("admin")) {
+            List<User> users=userDao.getallUsers();
+//            for(User user:users)
+//                System.out.println("com.me.controller.UserController.confirmLogin()"+user.getEmail());
+            request.getSession().setAttribute("allusers", users);
+            return "admin";
+        }
+
         try {
             User user = userDao.get(useremail, password);
             if (user != null) {
@@ -68,7 +98,7 @@ public class UserController {
         user.setPhone(lname);
         try {
             userDao.register(user);
-           request.getSession().setAttribute("existUser", user);
+            request.getSession().setAttribute("existUser", user);
         } catch (Exception e) {
             System.out.println(e);
             return "errorPage";
