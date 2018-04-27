@@ -8,4 +8,5 @@ com\me\controller\UserController.class
 com\ruoran\pojo\User.class
 com\ruoran\pojo\Product.class
 com\ruoran\pojo\Cart.class
+com\ruoran\DAO\OrderDao.class
 com\ruoran\DAO\UserDAO.class

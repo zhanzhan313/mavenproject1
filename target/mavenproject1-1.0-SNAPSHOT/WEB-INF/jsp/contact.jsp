@@ -51,23 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="contact-map">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.1274194639473!2d-71.09136038410577!3d42.33980667918823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a1999cf5ce1%3A0xc97b00e66522b98c!2z5Lic5YyX5aSn5a2m!5e0!3m2!1szh-CN!2sin!4v1524517757812" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
-		<div class="contact-form">
-			<div class="contact-info">
-				<h3>CONTACT FORM</h3>
-			</div>
-			<form>
-				<div class="contact-left">
-					<input type="text" placeholder="Name" required>
-					<input type="text" placeholder="E-mail" required>
-					<input type="text" placeholder="Subject" required>
-				</div>
-				<div class="contact-right">
-					<textarea placeholder="Message" required></textarea>
-				</div>
-				<div class="clearfix"></div>
-				<input type="submit" value="SUBMIT">
-			</form>
-		</div>
+	
 	</div>
 </div>
 <!-- //contact-page -->

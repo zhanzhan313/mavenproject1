@@ -17,7 +17,7 @@
 					<ul class="rslides" id="slider4">
 					<li>
 								<div class="banner-info">
-									<h3>Smart But Casual</h3>
+									<h3>Shop your favorite book!</h3>
 									<p>Start your shopping here...</p>
 								</div>
 							</li>
@@ -29,7 +29,7 @@
 							</li>
 							<li>
 								<div class="banner-info">
-								  <h3>Pack your Bag</h3>
+								  <h3>Quick Delivery!</h3>
 									<p>Start your shopping here...</p>
 								</div>								
 							</li>
@@ -58,8 +58,10 @@
 			    });
 			  </script>
 	</div>
-
+<div class="clearfix"> </div>
 </div>
-	
+	<div class="shop">
+		<a href="${contextPath}/mavenproject1/sortbook.htm?type=science">SHOP  NOW</a>
+	</div>
 	</div>
 		</div>

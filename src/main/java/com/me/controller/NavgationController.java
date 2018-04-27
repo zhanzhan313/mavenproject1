@@ -27,6 +27,14 @@ public class NavgationController {
         return "index";
 
     }
+    @RequestMapping("/sortbook.htm")
+    public String sortbook(HttpServletRequest request) {
+        
+        System.out.println("com.me.controller.NavgationController.sortbook()"+request.getParameter("type"));
+        request.getSession().setAttribute("booktype", request.getParameter("type"));
+        return "productList";
+
+    }
 
     @RequestMapping("/contact.htm")
     public String contact() {

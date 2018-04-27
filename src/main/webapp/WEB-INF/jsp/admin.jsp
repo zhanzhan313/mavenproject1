@@ -20,7 +20,7 @@
 				<div class="header-top-left">
 					<ul>
                                      
-                                            <li><a href='#'><span class='glyphicon glyphicon-user'> </span> WelCome Admin !</a></li><li><a href=logout.htm><span class='glyphicon glyphicon-lock'> </span>Logout</a></li>
+                                            <li><a href='#'><span class='glyphicon glyphicon-user'> </span> WelCome Admin!</a></li><li><a href=logout.htm><span class='glyphicon glyphicon-lock'> </span>Logout</a></li>
    
                                             </ul>
 				</div>
