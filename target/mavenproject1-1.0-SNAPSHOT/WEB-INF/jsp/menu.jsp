@@ -29,7 +29,7 @@
                             out.print("<li><a href=account.htm><span class='glyphicon glyphicon-user'> </span>Login</a></li><li><a href=register.htm><span class='glyphicon glyphicon-lock'> </span>Create an Account</a></li>");
                         }
                         if (ifexist) {
-                            out.print("<li><a href='#'><span class='glyphicon glyphicon-user'> </span> WelCome " + user.getFname() + " !</a></li><li><a href=logout.htm><span class='glyphicon glyphicon-lock'> </span>Logout</a></li>");
+                            out.print("<li><a href=orderhistory.htm><span class='glyphicon glyphicon-user'> </span> WelCome " + user.getFname() + " </a></li><li><a href=logout.htm><span class='glyphicon glyphicon-lock'> </span>Logout</a></li>");
                         }
                     %>
                 </ul>

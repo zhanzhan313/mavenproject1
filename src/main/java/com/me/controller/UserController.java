@@ -10,12 +10,8 @@ import com.ruoran.DAO.UserDAO;
 import com.ruoran.pojo.Order;
 import com.ruoran.pojo.OrderItem;
 import com.ruoran.pojo.User;
-import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -73,9 +69,11 @@ public class UserController {
                 request.getSession().setAttribute("existUser", user);
                 return "index";
             } else {
+                System.out.println("com.me.controller.UserController.confirmLogin() user is null");
                 return "errorPage";
             }
         } catch (Exception e) {
+            System.err.println(e);
             return "errorPage";
         }
 
