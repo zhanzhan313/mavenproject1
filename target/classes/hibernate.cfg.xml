@@ -48,7 +48,7 @@ Contributor(s):
     <property name="hibernate.connection.password">admin</property>
     <property name="hibernate.order_updates">true</property>
     <property name="hibernate.show_sql">true</property>
-<!--    <property name="hibernate.hbm2ddl.auto">create</property>-->
+    <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
     <mapping resource="Order.hbm.xml"/>
     <mapping resource="Orderitem.hbm.xml"/>
     <mapping resource="User.hbm.xml"/>

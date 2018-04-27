@@ -61,7 +61,7 @@ public class CartController {
         cartItem.setCount(1);
         cart.addCart(cartItem);
         httpSession.setAttribute("mycart", cart);
-        return "index";
+        return "productList";
     }
 
     @RequestMapping("/emptymycart.htm")

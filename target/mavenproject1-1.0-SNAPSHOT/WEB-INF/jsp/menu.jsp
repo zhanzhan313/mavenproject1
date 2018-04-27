@@ -38,7 +38,7 @@
             <div class="header-right">
                 <div class="cart box_1">
                     <a href="checkout.htm">
-                        <h3> <span class=""> <c:set var="cart" scope="session" value="${mycart}"/> <c:out value="${cart.total}"/> $</span> <img src="images/bag.png" alt=""></h3>
+                        <h3> <span class=""> <c:set var="cart" scope="session" value="${mycart}"/>$ <c:out value="${cart.total}"/> </span> <img src="images/bag.png" alt=""></h3>
                     </a>	
                     <p><a class="clear" href="emptymycart.htm" >Empty cart</a></p>
                     <div class="clearfix"> </div>
