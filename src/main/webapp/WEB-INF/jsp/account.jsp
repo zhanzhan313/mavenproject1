@@ -40,8 +40,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                 </ul>
                 <ul class="previous">
-                	<li><a href="${contextPath}/mavenproject1/index.htm">Back to Previous Page</a></li>
-                </ul>
+                    <li><a href="${contextPath}/mavenproject1/index.htm">Back to Previous Page</a></li>
+                </ul><br/>
+                <h2>You have not logged in yet, Please login first to continue!</h2>
                 <div class="clearfix"></div>
 			   </div>
 			   <div class="account_grid">

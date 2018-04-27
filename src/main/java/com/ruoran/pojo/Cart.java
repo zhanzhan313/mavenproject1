@@ -32,7 +32,7 @@ public Cart(){}
 
     public void addCart(CartItem cartItem) {
 
-        String pid = cartItem.getProduct().getPid();
+        String pid = cartItem.getProductid();
         //if items already exist in cart
         if (map.containsKey(pid)) {
             // exist

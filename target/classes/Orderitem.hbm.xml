@@ -47,7 +47,11 @@ Contributor(s):
 		
 		<property name="count"/>
 		<property name="subtotal"/>
+		<property name="productname"/>
+		<property name="singlepric"/>
+		<property name="productpic"/>
 		
+	
 		<!--<many-to-one name="product" lazy="false" class="com.ruoran.pojo.Product" column="pid"></many-to-one>-->
 		
 		<many-to-one name="order" class="com.ruoran.pojo.Order" column="oid"/>

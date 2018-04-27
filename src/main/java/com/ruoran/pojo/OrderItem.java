@@ -6,22 +6,12 @@
 package com.ruoran.pojo;
 
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 /**
  *
  * @author ruoran
  */
-
 public class OrderItem implements Serializable {
-
 
     private Integer itemid;
 
@@ -29,8 +19,36 @@ public class OrderItem implements Serializable {
 
     private Double subtotal;
 
+    private double singlepric;
+
+    private String productname;
+    private String productpic;
 
     private Order order;
+
+    public String getProductname() {
+        return productname;
+    }
+
+    public void setProductname(String productname) {
+        this.productname = productname;
+    }
+
+    public double getSinglepric() {
+        return singlepric;
+    }
+
+    public void setSinglepric(double singlepric) {
+        this.singlepric = singlepric;
+    }
+
+    public String getProductpic() {
+        return productpic;
+    }
+
+    public void setProductpic(String productpic) {
+        this.productpic = productpic;
+    }
 
     public OrderItem() {
     }

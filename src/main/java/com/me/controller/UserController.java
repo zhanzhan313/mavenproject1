@@ -73,8 +73,7 @@ public class UserController {
             User user = userDao.get(useremail, password);
             if (user != null) {
                 System.out.println(user.getUid());
-                HttpSession session = request.getSession();
-                session.setAttribute("existUser", user);
+                request.getSession().setAttribute("existUser", user);
                 return "index";
             } else {
                 return "errorPage";

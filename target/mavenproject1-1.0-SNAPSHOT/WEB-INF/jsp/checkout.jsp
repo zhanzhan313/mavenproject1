@@ -93,23 +93,27 @@
                 </div>
                 <h2>MY SHOPPING BAG </h2>
                 <c:set var="cart" scope="session" value="${mycart}"/>
+               
                 <c:forEach var="cartitem" items="${cart.cartItems}">
                     <div class="cart-gd">
                         <div class="cart-header">
                             <div class="close1"> </div>
                             <div class="cart-sec simpleCart_shelfItem">
                                 <div class="cart-item cyc">
-                                    <img src="${cartitem.product.image}" class="img-responsive" alt="">
+                                    <img src="${cartitem.productpic}" class="img-responsive" alt="">
                                 </div>
                                 <div class="cart-item-info">
-                                    <h3> <c:out value="${cartitem.product.pname}"/></h3>
+                                    <h3> <c:out value="${cartitem.productname}"/></h3>
                                     <ul class="qty">
                                         <li><p>Quantity:</p></li>
                                         <li><p><c:out value="${cartitem.count}"/></p></li>
                                     </ul>
                                     <div class="delivery">
-                                        <p>Price :<c:out value="${cartitem.product.market_price}"/></p>
-
+                                        <p>Single Price :<c:out value="${cartitem.productpric}"/></p>
+                                        <div class="clearfix"></div>
+                                    </div>	
+                                    <div class="delivery">
+                                        <p>Subtotal :<c:out value="${cartitem.subtotal}"/></p>
                                         <div class="clearfix"></div>
                                     </div>	
                                 </div>
@@ -145,7 +149,10 @@
                         <li class="last_price"><span><c:out value="${cart.total}"/></span></li>
                         <div class="clearfix"> </div>
                     </ul>
-                    <a href="placeorder.htm">Produced By Cart</a>
+                         <c:if test="${cart!=null}">
+                             <a href="placeorder.htm">Produced By Cart</a>
+                         </c:if>
+                    
                 </div>
 
 
