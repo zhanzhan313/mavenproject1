@@ -16,8 +16,7 @@
         <title>Error Page</title>
     </head>
     <style>
-            .col-center-block {  
-     
+    .col-center-block {  
     margin-left: 30%;  
     margin-right: auto;  
 }  

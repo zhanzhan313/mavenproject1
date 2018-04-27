@@ -10,4 +10,5 @@ com\ruoran\pojo\User.class
 com\ruoran\pojo\Product.class
 com\ruoran\pojo\Cart.class
 com\ruoran\DAO\OrderDao.class
+com\me\filter\Md5.class
 com\ruoran\DAO\UserDAO.class

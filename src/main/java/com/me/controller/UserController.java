@@ -5,6 +5,7 @@
  */
 package com.me.controller;
 
+import com.me.filter.Md5;
 import com.ruoran.DAO.OrderDao;
 import com.ruoran.DAO.UserDAO;
 import com.ruoran.pojo.Order;
@@ -63,7 +64,7 @@ public class UserController {
         }
 
         try {
-            User user = userDao.get(useremail, password);
+            User user = userDao.get(useremail, Md5.crypt(password));
             if (user != null) {
                 System.out.println(user.getUid());
                 request.getSession().setAttribute("existUser", user);
@@ -92,7 +93,7 @@ public class UserController {
         user.setLname(lname);
         user.setEmail(useremail);
         user.setFname(fname);
-        user.setPassword(password);
+        user.setPassword( Md5.crypt(password));
         user.setPhone(lname);
         try {
             userDao.register(user);
