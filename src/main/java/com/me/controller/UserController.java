@@ -26,42 +26,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class UserController {
     
-    @RequestMapping("/test.htm")
-    public String test(UserDAO userdao) {
-        User user = new User();
-        user.setFname("xiaozuo");
-//        Set<Order> orders = new HashSet<Order>();
-//        Set<OrderItem> orderitemss = new HashSet<OrderItem>();
-//        orderitemss.add(new OrderItem());
-//        orderitemss.add(new OrderItem());
-//        orderitemss.add(new OrderItem());
-//        OrderItem orderItem = new OrderItem();
-//        Set<OrderItem> orderitemss2 = new HashSet<OrderItem>();
-//        orderitemss2.add(new OrderItem());
-//        orderitemss2.add(new OrderItem());
-//        orderitemss2.add(new OrderItem());
-        Order order = new Order();
-        order.setTotal(12.3);
-    order.setOrdertime(new Date());
-        user.getOrders().add(order);
-       
-        order.setUser(user);
-       
-        order.getOrderItems().add(new OrderItem());
-//        order.setOrderItems(orderitemss);
-//        order2.setOrderItems(orderitemss2);
-//        orders.add(order);
-//        orders.add(order2);
-
-//        user.setOrders(orders);
-        try {
-            userdao.register(user);
-            userdao.saveOrder(order);
-         
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return "index";
+    @RequestMapping("/orderhistory.htm")
+    public String orderhistory(HttpServletRequest request) {
+        User user=(User)request.getSession().getAttribute("existUser");
     }
     
     
@@ -101,8 +68,7 @@ public class UserController {
         user.setPhone(lname);
         try {
             userDao.register(user);
-            HttpSession session = request.getSession();
-            session.setAttribute("existUser", user);
+           request.getSession().setAttribute("existUser", user);
         } catch (Exception e) {
             System.out.println(e);
             return "errorPage";

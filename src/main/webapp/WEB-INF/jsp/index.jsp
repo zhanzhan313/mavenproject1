@@ -28,63 +28,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
  <%@include file="menu.jsp" %> 
-	<div class="banner">
-		<div class="container">
-<div class="banner-bottom">
-	<div class="banner-bottom-left">
-		
-	</div>
-	<div class="banner-bottom-right">
-		<div  class="callbacks_container">
-					<ul class="rslides" id="slider4">
-					<li>
-								<div class="banner-info">
-									<h3>Smart But Casual</h3>
-									<p>Start your shopping here...</p>
-								</div>
-							</li>
-							<li>
-								<div class="banner-info">
-								   <h3>Shop Online</h3>
-									<p>Start your shopping here...</p>
-								</div>
-							</li>
-							<li>
-								<div class="banner-info">
-								  <h3>Pack your Bag</h3>
-									<p>Start your shopping here...</p>
-								</div>								
-							</li>
-						</ul>
-					</div>
-					<!--banner-->
-	  			<script src="js/responsiveslides.min.js"></script>
-			 <script>
-			    // You can also use "$(window).load(function() {"
-			    $(function () {
-			      // Slideshow 4
-			      $("#slider4").responsiveSlides({
-			        auto: true,
-			        pager:true,
-			        nav:false,
-			        speed: 500,
-			        namespace: "callbacks",
-			        before: function () {
-			          $('.events').append("<li>before event fired.</li>");
-			        },
-			        after: function () {
-			          $('.events').append("<li>after event fired.</li>");
-			        }
-			      });
-			
-			    });
-			  </script>
-	</div>
-
-</div>
+ <%@include file="banner.jsp" %> 
 	
-	</div>
-		</div>
 		<!-- content-section-starts-here -->
 		
 	 <script type="text/javascript">

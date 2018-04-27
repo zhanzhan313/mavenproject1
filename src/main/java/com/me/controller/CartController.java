@@ -67,7 +67,7 @@ public class CartController {
         order.setTotal(cart.getTotal());
         order.setOrdertime(new Date());
     
-        User existUser = (User)request.getAttribute("existUser");
+        User existUser = (User)request.getSession().getAttribute("existUser");
          System.out.println("com.me.controller.CartController.checkout()"+existUser);
         if (existUser == null) {
             return "account";
@@ -97,7 +97,7 @@ public class CartController {
         // 页面需要回显订单信息:
         // 使用模型驱动了 所有可以不使用值栈保存了
         // ActionContext.getContext().getValueStack().set("order", order);
-        return "index";
+        return "ordersuccess";
     }
     
     
