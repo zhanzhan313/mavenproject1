@@ -130,7 +130,6 @@
 <script>
 var app = angular.module('myApp', []);
 app.controller('validateCtrl', function($scope) {
-    $scope.fname = 'Example';
     $scope.email = 'example@gmail.com';
 });
 </script>

@@ -19,9 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class CartController {
+    
+        Cart cart;
       @RequestMapping("/addtocartt.htm")
     public String addtocartt(HttpServletRequest request) {
-        Cart cart = new Cart();
         System.out.print(request.getParameter("bookname"));
         HttpSession httpSession = request.getSession();
 
@@ -29,7 +30,14 @@ public class CartController {
         product.setImage(request.getParameter("bookimg"));
         product.setMarket_price(Double.valueOf((request.getParameter("bookprice"))));
         product.setPid((request.getParameter("bookid")));
-
+          try {
+              cart=(Cart)request.getSession().getAttribute("mycart");
+              if(cart==null)
+                  cart=new Cart();
+          } catch (Exception e) {
+              System.out.println(e);
+              cart=new Cart();
+          }
         product.setPname(request.getParameter("bookname"));
 
         CartItem cartItem = new CartItem();
