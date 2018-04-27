@@ -6,6 +6,7 @@
 package com.ruoran.DAO;
 
 import com.ruoran.pojo.Order;
+import com.ruoran.pojo.OrderItem;
 import com.ruoran.pojo.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -34,6 +35,23 @@ public class UserDAO extends DAO{
 			begin();
 			System.out.println("inside DAO order");
 			getSession().save(order);
+			commit();
+			
+
+		} catch (HibernateException e) {
+			rollback();
+			throw new Exception("Exception while creating Order: " + e.getMessage());
+		}
+	}
+    public void saveOrderItems(Order order) throws Exception {
+		try {
+			begin();
+			System.out.println("inside DAO order");
+                        for (OrderItem orderItem:order.getOrderItems()) {
+                        
+                        getSession().save(orderItem);
+                    }
+			
 			commit();
 			
 

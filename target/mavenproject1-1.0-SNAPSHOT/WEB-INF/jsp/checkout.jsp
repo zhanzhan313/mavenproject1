@@ -150,7 +150,7 @@
                         <div class="clearfix"> </div>
                     </ul>
                          <c:if test="${cart!=null}">
-                             <a href="placeorder.htm">Produced By Cart</a>
+                             <a href="${contextPath}/mavenproject1/placeorder.htm">Place Order</a>
                          </c:if>
                     
                 </div>

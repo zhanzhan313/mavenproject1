@@ -57,46 +57,48 @@ public class CartController {
     }
     
     
-//     @RequestMapping("/placeorder.htm")
-//    public String checkout(HttpServletRequest request,UserDAO userDAO) {
-//        // 调用Service完成数据库插入的操作:
-//        // Order order = new Order();
-//        // 设置订单的总金额:订单的总金额应该是购物车中总金额:
-//        // 购物车在session中,从session总获得购物车信息.
-//        Order order = new Order();
-//        if (cart == null) {
-////            this.addActionMessage("emply cart!");
-//            return "index";
-//        }
-//        order.setTotal(cart.getTotal());
-//     
-//        order.setOrdertime(new Date());
-//    
-//        User existUser = (User)request.getAttribute("existUser");
-//        if (existUser == null) {
-//            return "account";
-//        }
-//        order.setUser(existUser);
-//        // set order item
-//        for (CartItem cartItem : cart.getCartItems()) {
-//            // 订单项的信息从购物项获得的.
-//            OrderItem orderItem = new OrderItem();
-//            orderItem.setCount(cartItem.getCount());
-//            orderItem.setSubtotal(cartItem.getSubtotal());
-//            orderItem.setOrder(order);
-//            order.getOrderItems().add(orderItem);
-//        }
-//        try {
-//        userDAO.saveOrder(order); 
-//        } catch (Exception e) {
-//            System.out.println("com.ruoran.controller.CartController.checkout()"+e);
-//        }
-//        // 清空购物车:
-//        cart.clearCart();
-//
-//        // 页面需要回显订单信息:
-//        // 使用模型驱动了 所有可以不使用值栈保存了
-//        // ActionContext.getContext().getValueStack().set("order", order);
-//        return "index";
-//    }
+     @RequestMapping("/placeorder.htm")
+    public String checkout(HttpServletRequest request,UserDAO userDAO) {
+        // 调用Service完成数据库插入的操作:
+        // Order order = new Order();
+        // 设置订单的总金额:订单的总金额应该是购物车中总金额:
+        // 购物车在session中,从session总获得购物车信息.
+        Order order = new Order();
+        order.setTotal(cart.getTotal());
+        order.setOrdertime(new Date());
+    
+        User existUser = (User)request.getAttribute("existUser");
+         System.out.println("com.me.controller.CartController.checkout()"+existUser);
+        if (existUser == null) {
+            return "account";
+        }
+        order.setUser(existUser);
+        // set order item
+        for (CartItem cartItem : cart.getCartItems()) {
+            // 订单项的信息从购物项获得的.
+            OrderItem orderItem = new OrderItem();
+            orderItem.setCount(cartItem.getCount());
+            orderItem.setSubtotal(cartItem.getSubtotal());
+            orderItem.setProductname(cartItem.getProductname());
+            orderItem.setProductpic(cartItem.getProductid());
+            orderItem.setSinglepric(cartItem.getProductpric());
+            orderItem.setOrder(order);
+            order.getOrderItems().add(orderItem);
+        }
+        try {
+        userDAO.saveOrder(order); 
+        userDAO.saveOrderItems(order); 
+        } catch (Exception e) {
+            System.out.println("com.ruoran.controller.CartController.checkout()"+e);
+        }
+        // 清空购物车:
+        cart.clearCart();
+
+        // 页面需要回显订单信息:
+        // 使用模型驱动了 所有可以不使用值栈保存了
+        // ActionContext.getContext().getValueStack().set("order", order);
+        return "index";
+    }
+    
+    
 }
