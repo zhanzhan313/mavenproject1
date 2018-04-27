@@ -3,7 +3,7 @@
     Created on : Apr 24, 2018, 2:30:00 AM
     Author     : ruoran
 --%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -156,7 +156,7 @@
         </div>
         <script type="text/javascript">
 
-            var url = "https://www.googleapis.com/books/v1/volumes?q=science&filter=paid-ebooks&printType=books&orderBy=newest&projection=full&maxResults=40";
+    var url = "https://www.googleapis.com/books/v1/volumes?q=science&filter=paid-ebooks&printType=books&orderBy=newest&projection=full&maxResults=40";
 
             function getBooks(url, callback) {
                 var xHttp = new XMLHttpRequest();

@@ -5,6 +5,7 @@
  */
 package com.me.controller;
 
+import com.ruoran.DAO.OrderDao;
 import com.ruoran.DAO.UserDAO;
 import com.ruoran.pojo.Cart;
 import com.ruoran.pojo.CartItem;
@@ -13,6 +14,7 @@ import com.ruoran.pojo.OrderItem;
 import com.ruoran.pojo.Product;
 import com.ruoran.pojo.User;
 import java.util.Date;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -24,30 +26,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class CartController {
-    
-        Cart cart;
-      @RequestMapping("/addtocartt.htm")
+
+ Cart cart;
+
+    @RequestMapping("/addtocartt.htm")
     public String addtocartt(HttpServletRequest request) {
         System.out.print(request.getParameter("bookname"));
         HttpSession httpSession = request.getSession();
 
         Product product = new Product();
         product.setImage(request.getParameter("bookimg"));
-        try{ 
+        try {
             product.setMarket_price(Double.valueOf((request.getParameter("bookprice"))));
-        }catch(Exception e){
+        } catch (Exception e) {
             product.setMarket_price(0.0);
         }
-       
         product.setPid((request.getParameter("bookid")));
-          try {
-              cart=(Cart)request.getSession().getAttribute("mycart");
-              if(cart==null)
-                  cart=new Cart();
-          } catch (Exception e) {
-              System.out.println(e);
-              cart=new Cart();
-          }
+        try {
+             cart = (Cart) request.getSession().getAttribute("mycart");
+            if (cart == null) {
+                cart = new Cart();
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            cart = new Cart();
+        }
         product.setPname(request.getParameter("bookname"));
 
         CartItem cartItem = new CartItem();
@@ -58,12 +61,28 @@ public class CartController {
         cartItem.setCount(1);
         cart.addCart(cartItem);
         httpSession.setAttribute("mycart", cart);
-        return "checkout";
+        return "index";
     }
-    
-    
-     @RequestMapping("/placeorder.htm")
-    public String checkout(HttpServletRequest request,UserDAO userDAO) {
+
+    @RequestMapping("/emptymycart.htm")
+    public String emptymycart(HttpServletRequest request) {
+         try {
+         cart = (Cart) request.getSession().getAttribute("mycart");
+            if (cart == null) {
+                cart = new Cart();
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            cart = new Cart();
+        }
+        cart.clearCart();
+        request.getSession().setAttribute("mycart", cart);
+        return "index";
+
+    }
+
+    @RequestMapping("/placeorder.htm")
+    public String checkout(HttpServletRequest request, UserDAO userDAO) {
         // 调用Service完成数据库插入的操作:
         // Order order = new Order();
         // 设置订单的总金额:订单的总金额应该是购物车中总金额:
@@ -71,9 +90,9 @@ public class CartController {
         Order order = new Order();
         order.setTotal(cart.getTotal());
         order.setOrdertime(new Date());
-    
-        User existUser = (User)request.getSession().getAttribute("existUser");
-         System.out.println("com.me.controller.CartController.checkout()"+existUser);
+
+        User existUser = (User) request.getSession().getAttribute("existUser");
+        System.out.println("com.me.controller.CartController.checkout()" + existUser);
         if (existUser == null) {
             return "account";
         }
@@ -91,10 +110,10 @@ public class CartController {
             order.getOrderItems().add(orderItem);
         }
         try {
-        userDAO.saveOrder(order); 
-        userDAO.saveOrderItems(order); 
+            userDAO.saveOrder(order);
+            userDAO.saveOrderItems(order);
         } catch (Exception e) {
-            System.out.println("com.ruoran.controller.CartController.checkout()"+e);
+            System.out.println("com.ruoran.controller.CartController.checkout()" + e);
         }
         // 清空购物车:
         cart.clearCart();
@@ -104,6 +123,5 @@ public class CartController {
         // ActionContext.getContext().getValueStack().set("order", order);
         return "ordersuccess";
     }
-    
-    
+
 }
