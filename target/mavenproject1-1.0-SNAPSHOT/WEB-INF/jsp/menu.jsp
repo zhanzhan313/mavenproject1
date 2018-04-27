@@ -61,7 +61,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="logo">
-                        <h1><a href="${contextPath}/mavenproject1/index.htm"><span>E</span> -Shop</a></h1>
+                        <h1><a href="${contextPath}/mavenproject1/sortbook.htm"><span>E</span> -Shop</a></h1>
                     </div>
                 </div>
                 <!--/.navbar-header-->
@@ -74,7 +74,7 @@
                         <li><a href="${contextPath}/mavenproject1/sortbook.htm?type=Romantic">Romantic</a></li>
                         <li><a href="${contextPath}/mavenproject1/sortbook.htm?type=Cartoon">Cartoon</a></li>
 
-                        <li><a >CONTACT</a></li>
+                        <li><a href="${contextPath}/mavenproject1/contact.htm">CONTACT</a></li>
 
                         <form class="form-inline" action="sortbook.htm">
                             <input class="form-control mr-sm-2" type="search" name="type" placeholder="Search" aria-label="Search">

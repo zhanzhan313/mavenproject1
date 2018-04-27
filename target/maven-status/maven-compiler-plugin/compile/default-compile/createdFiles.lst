@@ -1,3 +1,4 @@
+com\me\filter\SqlFilter.class
 com\ruoran\DAO\DAO.class
 com\ruoran\pojo\Order.class
 com\ruoran\pojo\OrderItem.class

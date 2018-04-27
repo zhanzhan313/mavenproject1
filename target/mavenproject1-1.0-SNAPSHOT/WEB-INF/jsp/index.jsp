@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Eshop a Flat E-Commerce Bootstrap Responsive Website Template | Home :: 小贝壳网站模板</title>
+<title>Eshop| Home </title>
 <link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="./js/jquery.min.js"></script>

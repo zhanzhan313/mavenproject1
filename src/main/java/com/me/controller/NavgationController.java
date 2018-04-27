@@ -20,6 +20,10 @@ public class NavgationController {
     public String login() {
         return "account";
     }
+    @RequestMapping("/errorPage.htm")
+    public String errorPage() {
+        return "errorPage";
+    }
 
     @RequestMapping("/logout.htm")
     public String logout(HttpServletRequest request) {
