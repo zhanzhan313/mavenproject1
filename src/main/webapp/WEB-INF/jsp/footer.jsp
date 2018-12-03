@@ -14,10 +14,10 @@
                     <h4>Shop</h4>
                     <ul class="f_nav">
                         <li><a href="index.htm">Home</a></li>
-                        <li><a href="${contextPath}/mavenproject1/sortbook.htm?type=love">children</a></li>
-                        <li><a href="${contextPath}/mavenproject1/sortbook.htm?type=China">Programming</a></li>
-                        <li><a href="${contextPath}/mavenproject1/sortbook.htm?type=America">Romantic</a></li>
-                        <li><a href="${contextPath}/mavenproject1/sortbook.htm?type=Cartoon">Cartoon</a></li>
+                        <li><a href="sortbook.htm?type=love">children</a></li>
+                        <li><a href="sortbook.htm?type=China">Programming</a></li>
+                        <li><a href="sortbook.htm?type=America">Romantic</a></li>
+                        <li><a href="sortbook.htm?type=Cartoon">Cartoon</a></li>
                     </ul>	
                 </div>
                 <div class="col-md-3 span1_of_4">
@@ -40,10 +40,10 @@
                     <h4>popular</h4>
                     <ul class="f_nav">
                     
-                        <li><a href="${contextPath}/mavenproject1/sortbook.htm?type=children">children</a></li>
-                        <li><a href="${contextPath}/mavenproject1/sortbook.htm?type=Programming">Programming</a></li>
-                        <li><a href="${contextPath}/mavenproject1/sortbook.htm?type=Romantic">Romantic</a></li>
-                        <li><a href="${contextPath}/mavenproject1/sortbook.htm?type=Cartoon">Cartoon</a></li>
+                        <li><a href="sortbook.htm?type=children">children</a></li>
+                        <li><a href="sortbook.htm?type=Programming">Programming</a></li>
+                        <li><a href="sortbook.htm?type=Romantic">Romantic</a></li>
+                        <li><a href="sortbook.htm?type=Cartoon">Cartoon</a></li>
                     </ul>			
                 </div>
                 <div class="clearfix"></div>

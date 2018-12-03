@@ -32,7 +32,7 @@
                 <div class="dreamcrub">
                     <ul class="breadcrumbs">
                         <li class="home">
-                            <a href="${contextPath}/mavenproject1/index.htm" title="Go to Home Page">Home</a>&nbsp;
+                            <a href="index.htm" title="Go to Home Page">Home</a>&nbsp;
                             <span>&gt;</span>
                         </li>
                         <li class="women">
@@ -40,7 +40,7 @@
                         </li>
                     </ul>
                     <ul class="previous">
-                        <li><a href="${contextPath}/mavenproject1/index.htm">Back to Previous Page</a></li>
+                        <li><a href="index.htm">Back to Previous Page</a></li>
                     </ul>
                     <div class="clearfix"></div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="reg-form">
                         <div class="reg">
                             <p>Welcome, please enter the following details to continue.</p>
-                            <p>If you have previously registered with us, <a href="${contextPath}/mavenproject1/account.htm">click here</a></p>
+                            <p>If you have previously registered with us, <a href="account.htm">click here</a></p>
                             <form ng-app="myApp"  ng-controller="validateCtrl"
                                   name="myForm" novalidate action="registerValid.htm">
                                 <ul>
@@ -160,7 +160,7 @@ app.controller('validateCtrl', function($scope) {
             }
         };
         var email = document.getElementById("email").value;
-        xhttp.open("POST", "${contextPath}/mavenproject1/findbyEmail.htm?time=" + new Date().getTime() + "&useremail=" + email, true);
+        xhttp.open("POST", "findbyEmail.htm?time=" + new Date().getTime() + "&useremail=" + email, true);
         xhttp.send();
     }
 </script>

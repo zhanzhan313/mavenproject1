@@ -63,7 +63,7 @@
                 <td><c:out value="${user.email}"/></td>
                 <td><c:out value="${user.phone}"/></td>
                 <td><c:out value="${user.addr}"/></td>
-                <td><a href="${contextPath}/mavenproject1/userorderhistory.htm?userid=<c:out value='${user.uid}'/>">view User Order List</a></td>
+                <td><a href="/userorderhistory.htm?userid=<c:out value='${user.uid}'/>">view User Order List</a></td>
        
     </tr>
 </c:forEach>

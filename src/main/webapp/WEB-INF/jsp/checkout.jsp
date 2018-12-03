@@ -79,7 +79,7 @@
                 <div class="dreamcrub">
                     <ul class="breadcrumbs">
                         <li class="home">
-                            <a href="${contextPath}/mavenproject1/index.htm" title="Go to Home Page">Home</a>&nbsp;
+                            <a href="index.htm" title="Go to Home Page">Home</a>&nbsp;
                             <span>&gt;</span>
                         </li>
                         <li class="women">
@@ -87,7 +87,7 @@
                         </li>
                     </ul>
                     <ul class="previous">
-                        <li><a href="${contextPath}/mavenproject1/index.htm">Back to Previous Page</a></li>
+                        <li><a href="index.htm">Back to Previous Page</a></li>
                     </ul>
                     <div class="clearfix"></div>
                 </div>
@@ -150,7 +150,7 @@
                         <div class="clearfix"> </div>
                     </ul>
                          <c:if test="${cart!=null}">
-                             <a href="${contextPath}/mavenproject1/placeorder.htm">Place Order</a>
+                             <a href="placeorder.htm">Place Order</a>
                          </c:if>
                     
                 </div>

@@ -61,7 +61,7 @@
 <div class="clearfix"> </div>
 </div>
 	<div class="shop">
-		<a href="${contextPath}/mavenproject1/sortbook.htm?type=science">SHOP  NOW</a>
+		<a href="sortbook.htm?type=science">SHOP  NOW</a>
 	</div>
 	</div>
 		</div>

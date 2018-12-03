@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			    <div class="dreamcrub">
 			   	 <ul class="breadcrumbs">
                     <li class="home">
-                       <a href="${contextPath}/mavenproject1/index.htm" title="Go to Home Page">Home</a>&nbsp;
+                       <a href="index.htm" title="Go to Home Page">Home</a>&nbsp;
                        <span>&gt;</span>
                     </li>
                     <li class="women">
@@ -40,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                 </ul>
                 <ul class="previous">
-                    <li><a href="${contextPath}/mavenproject1/index.htm">Back to Previous Page</a></li>
+                    <li><a href="index.htm">Back to Previous Page</a></li>
                 </ul><br/>
                 <h2>You have not logged in yet, Please login first to continue!</h2>
                 <div class="clearfix"></div>
@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			   <div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
 			  	 <h2>NEW CUSTOMERS</h2>
 				 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-				 <a class="acount-btn"  href="${contextPath}/mavenproject1/register.htm">Create an Account</a>
+				 <a class="acount-btn"  href="register.htm">Create an Account</a>
 			   </div>
 			   <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
 			  	<h3>REGISTERED CUSTOMERS</h3>

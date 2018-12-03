@@ -40,7 +40,7 @@
                                         <p>Single Price :<c:out value="${order.ordertime}"/></p>
                                         <div class="clearfix"></div>
                                     </div>	
-                                   <a href="${contextPath}/mavenproject1/ViewSingleorder.htm?Ordernumber=<c:out value='${order.oid}'/>">view Order Detail</a>
+                                   <a href="ViewSingleorder.htm?Ordernumber=<c:out value='${order.oid}'/>">view Order Detail</a>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
